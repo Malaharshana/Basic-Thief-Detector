@@ -16,6 +16,7 @@ void setup() {
   pinMode(f,OUTPUT);
   pinMode(g,OUTPUT);
   pinMode(32,INPUT);
+  pinMode(18,OUTPUT);
   }
 
 
@@ -24,6 +25,8 @@ void loop() {
   int value=analogRead(32);
   Serial.println(value);
   if (value==1){
+    //Buzzer
+    digitalWrite(18,HIGH);
     //A
     digitalWrite(a,1);
     digitalWrite(b,1);
@@ -75,6 +78,9 @@ void loop() {
     delay(500);
     }
   else{
+    //Buzzer
+    digitalWrite(18,LOW);
+    //7-segment display
     digitalWrite(a,0);
     digitalWrite(b,0);
     digitalWrite(c,0);
